@@ -1,0 +1,646 @@
+Renesas Optimizing Linker (V3.07.00 )             11-Dec-2024 15:45:08
+
+*** Options ***
+
+-subcommand=DefaultBuild\MODULETEST118OCT.clnk
+-Input=DefaultBuild\cstart.obj
+-Input=DefaultBuild\stkinit.obj
+-Input=DefaultBuild\r_cg_main.obj
+-Input=DefaultBuild\r_cg_systeminit.obj
+-Input=DefaultBuild\r_cg_cgc.obj
+-Input=DefaultBuild\r_cg_cgc_user.obj
+-Input=DefaultBuild\r_cg_port.obj
+-Input=DefaultBuild\r_cg_port_user.obj
+-Input=DefaultBuild\r_cg_tau.obj
+-Input=DefaultBuild\r_cg_tau_user.obj
+-Input=DefaultBuild\r_cg_sau.obj
+-Input=DefaultBuild\r_cg_sau_user.obj
+-Input=DefaultBuild\Quecktel.obj
+-Input=DefaultBuild\r_cg_wdt.obj
+-Input=DefaultBuild\r_cg_wdt_user.obj
+-SECURITY_ID=00000000000000000000
+-DEVICE=C:\Program Files (x86)\Renesas Electronics\CS+\CC\Device\RL78\Devicefile\DR5F10NLE.DVF
+-DEBug
+-NOCOmpress
+-NOOPtimize
+-OUtput=DefaultBuild\MODULETEST118OCT.abs
+-OCDBG=84
+-DEBUG_MONITOR=FE00-FFFF
+-USER_OPT_BYTE=FFFFE0
+-LISt=DefaultBuild\MODULETEST118OCT.map
+-SHow=SYmbol,Total_size
+-AUTO_SECTION_LAYOUT
+-ROm=.data=.dataR
+-ROm=.sdata=.sdataR
+-NOMessage
+-MEMory=High
+-NOLOgo
+-LIBrary=DefaultBuild\MODULETEST118OCT.lib
+-end
+
+*** Error information ***
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+.vect
+                                  00000000  0000007f        80   0
+.constf
+                                  00000080  00000093        14   2
+.init_array
+                                  00000094  00000094         0   2
+.sdata
+                                  00000080  00000080         0   2
+.option_byte
+                                  000000c0  000000c3         4   1
+.security_id
+                                  000000c4  000000cd         a   1
+.RLIB
+                                  000000c4  000000c4         0   1
+.monitor1
+                                  000000ce  000000d7         a   1
+.data
+                                  000000d8  00000182        ab   2
+.text
+                                  00000183  00000479       2f7   1
+.textf
+                                  0000047a  00000d34       8bb   1
+.const
+                                  00002000  00002409       40a   2
+.SLIB
+                                  0000240a  00004bfe      27f5   1
+.monitor2
+                                  0000fe00  0000ffff       200   1
+.bss
+                                  000fe700  000ff2e7       be8   2
+.dataR
+                                  000ff2e8  000ff392        ab   2
+.sbss
+                                  000ffe20  000ffe20         0   2
+.sdataR
+                                  000ffe20  000ffe20         0   2
+
+*** Total Section Size ***
+
+RAMDATA SECTION:  00000c93 Byte(s)
+ROMDATA SECTION:  00000761 Byte(s)
+PROGRAM SECTION:  000033a7 Byte(s)
+
+*** Symbol List ***
+
+SECTION=
+FILE=                               START        END    SIZE
+  SYMBOL                            ADDR        SIZE    INFO      COUNTS  OPT
+
+SECTION=.vect
+FILE=rlink_generates_04
+                                  00000000  0000007f        80
+
+SECTION=.constf
+FILE=_REL_print
+                                  00000080  00000093        14
+
+SECTION=.option_byte
+FILE=rlink_generates_01
+                                  000000c0  000000c3         4
+
+SECTION=.security_id
+FILE=rlink_generates_03
+                                  000000c4  000000cd         a
+
+SECTION=.monitor1
+FILE=rlink_generates_02
+                                  000000ce  000000d7         a
+
+SECTION=.data
+FILE=DefaultBuild\r_cg_main.obj
+                                  000000d8  0000015d        86
+FILE=DefaultBuild\r_cg_tau_user.obj
+                                  0000015e  0000015e         1
+FILE=DefaultBuild\r_cg_sau_user.obj
+                                  00000160  0000016b         c
+FILE=DefaultBuild\Quecktel.obj
+                                  0000016c  00000182        17
+
+SECTION=.text
+FILE=DefaultBuild\cstart.obj
+                                  00000183  000001f5        73
+  _start
+                                  00000183         0   none ,g         * 
+  _exit
+                                  000001f3         0   none ,g         * 
+  _atexit
+                                  000001f5         0   none ,g         * 
+FILE=DefaultBuild\r_cg_tau_user.obj
+                                  000001f6  000002a4        af
+  _r_tau0_channel0_interrupt@1
+                                  000001f6        af   func ,l         * 
+FILE=DefaultBuild\r_cg_sau_user.obj
+                                  000002a5  00000477       1d3
+  _r_uart0_interrupt_receive@1
+                                  000002a5        75   func ,l         * 
+  _r_uart0_interrupt_send@1
+                                  0000031a        5c   func ,l         * 
+  _r_uart1_interrupt_receive@1
+                                  00000376        7f   func ,l         * 
+  _r_uart1_interrupt_send@1
+                                  000003f5        83   func ,l         * 
+FILE=DefaultBuild\r_cg_wdt_user.obj
+                                  00000478  00000479         2
+  _r_wdt_interrupt@1
+                                  00000478         2   func ,l         * 
+
+SECTION=.textf
+FILE=DefaultBuild\stkinit.obj
+                                  0000047a  000004bd        44
+  _stkinit
+                                  0000047a         0   none ,g         * 
+  LSTINIT1
+                                  00000488         0   none ,l         * 
+  LSTINIT2
+                                  000004b2         0   none ,l         * 
+  LSTINIT3
+                                  000004bd         0   none ,l         * 
+FILE=DefaultBuild\r_cg_main.obj
+                                  000004be  0000079d       2e0
+  ___delay_ms
+                                  000004be        25   func ,g         * 
+  _main
+                                  000004e3        95   func ,g         * 
+  _INIT_MODULE_TO_LISTEN_TCP
+                                  00000578        60   func ,g         * 
+  _CHECK_MODULE_RESPONSE
+                                  000005d8        4d   func ,g         * 
+  _PROCESS_TCP_DATA
+                                  00000625        1c   func ,g         * 
+  _SPLIT_TCP_DATA
+                                  00000641        6b   func ,g         * 
+  _SEND_TCP_REPLY
+                                  000006ac        26   func ,g         * 
+  _generate_at_command
+                                  000006d2        2d   func ,g         * 
+  _FETCH_TCPDATA_AND_SEND
+                                  000006ff        9f   func ,g         * 
+FILE=DefaultBuild\r_cg_systeminit.obj
+                                  0000079e  000007ee        51
+  _R_Systeminit
+                                  0000079e        4c   func ,g         * 
+  _hdwinit
+                                  000007ea         5   func ,g         * 
+FILE=DefaultBuild\r_cg_cgc.obj
+                                  000007ef  00000868        7a
+  _R_CGC_Create
+                                  000007ef        7a   func ,g         * 
+FILE=DefaultBuild\r_cg_cgc_user.obj
+                                  00000869  0000086b         3
+  _R_CGC_Get_ResetSource
+                                  00000869         3   func ,g         * 
+FILE=DefaultBuild\r_cg_port.obj
+                                  0000086c  00000880        15
+  _R_PORT_Create
+                                  0000086c        15   func ,g         * 
+FILE=DefaultBuild\r_cg_tau.obj
+                                  00000881  0000091a        9a
+  _R_TAU0_Create
+                                  00000881        7a   func ,g         * 
+  _R_TAU0_Channel0_Start
+                                  000008fb        10   func ,g         * 
+  _R_TAU0_Channel0_Stop
+                                  0000090b        10   func ,g         * 
+FILE=DefaultBuild\r_cg_tau_user.obj
+                                  0000091b  00000942        28
+  _delay_In_Seconds
+                                  0000091b        28   func ,g         * 
+FILE=DefaultBuild\r_cg_sau.obj
+                                  00000943  00000b59       217
+  _R_SAU0_Create
+                                  00000943        14   func ,g         * 
+  _R_UART0_Create
+                                  00000957        78   func ,g         * 
+  _R_UART0_Start
+                                  000009cf        26   func ,g         * 
+  _R_UART0_Stop
+                                  000009f5        1e   func ,g         * 
+  _R_UART0_Receive
+                                  00000a13        18   func ,g         * 
+  _R_UART0_Send
+                                  00000a2b        26   func ,g         * 
+  _R_UART1_Create
+                                  00000a51        87   func ,g         * 
+  _R_UART1_Start
+                                  00000ad8        26   func ,g         * 
+  _R_UART1_Stop
+                                  00000afe        1e   func ,g         * 
+  _R_UART1_Receive
+                                  00000b1c        18   func ,g         * 
+  _R_UART1_Send
+                                  00000b34        26   func ,g         * 
+FILE=DefaultBuild\r_cg_sau_user.obj
+                                  00000b5a  00000b5d         4
+  _r_uart0_callback_sendend@1
+                                  00000b5a         1   func ,l         * 
+  _r_uart0_callback_error@1
+                                  00000b5b         1   func ,l         * 
+  _r_uart1_callback_sendend@1
+                                  00000b5c         1   func ,l         * 
+  _r_uart1_callback_error@1
+                                  00000b5d         1   func ,l         * 
+FILE=DefaultBuild\Quecktel.obj
+                                  00000b5e  00000d20       1c3
+  _Initialize_Module
+                                  00000b5e       183   func ,g         * 
+  _Querry_Module_status
+                                  00000ce1         a   func ,g         * 
+  _Start_client_mode
+                                  00000ceb         a   func ,g         * 
+  _Start_server_mode
+                                  00000cf5         a   func ,g         * 
+  _Compare_response
+                                  00000cff        22   func ,g         * 
+FILE=DefaultBuild\r_cg_wdt.obj
+                                  00000d21  00000d34        14
+  _R_WDT_Create
+                                  00000d21        10   func ,g         * 
+  _R_WDT_Restart
+                                  00000d31         4   func ,g         * 
+
+SECTION=.const
+FILE=DefaultBuild\r_cg_main.obj
+                                  00002000  00002191       192
+FILE=DefaultBuild\Quecktel.obj
+                                  00002192  00002409       278
+
+SECTION=.SLIB
+FILE=memcmp
+                                  0000240a  0000241b        12
+  _memcmp
+                                  0000240a         0   none ,g         * 
+FILE=memset
+                                  0000241c  00002429         e
+  _memset
+                                  0000241c         0   none ,g         * 
+FILE=sprintf
+                                  0000242a  000024e5        bc
+  _sprintf
+                                  0000242a        a4   func ,g         * 
+  __REL_sp@1
+                                  000024ce        18   func ,l         * 
+FILE=strcpy
+                                  000024e6  000024f2         d
+  _strcpy
+                                  000024e6         0   none ,g         * 
+FILE=strlen
+                                  000024f3  000024fd         b
+  _strlen
+                                  000024f3         0   none ,g         * 
+FILE=_REL_print
+                                  000024fe  000043d2      1ed5
+  __REL_print
+                                  000024fe      1941   func ,g         * 
+  __REL_henkan1@1
+                                  00003e3f        1d   func ,l         * 
+  __REL_pri@1
+                                  00003e5c       289   func ,l         * 
+  __REL_fltgeti@1
+                                  000040e5       1af   func ,l         * 
+  __REL_inmod@1
+                                  00004294       13f   func ,l         * 
+FILE=_COM_fdiv
+                                  000043d3  00004500       12e
+  __COM_fdiv
+                                  00004432         0   none ,g         * 
+FILE=_COM_feq
+                                  00004501  00004516        16
+  __COM_feq
+                                  00004501         0   none ,g         * 
+FILE=_COM_fge
+                                  00004517  0000452c        16
+  __COM_fge
+                                  00004517         0   none ,g         * 
+FILE=_COM_flt
+                                  0000452d  00004542        16
+  __COM_flt
+                                  0000452d         0   none ,g         * 
+FILE=_COM_fmul
+                                  00004543  0000462f        ed
+  __COM_fmul
+                                  0000458e         0   none ,g         * 
+FILE=_COM_fne
+                                  00004630  00004640        11
+  __COM_fne
+                                  00004630         0   none ,g         * 
+FILE=_COM_ftosl
+                                  00004641  00004648         8
+  __COM_ftosl
+                                  00004641         0   none ,g         * 
+FILE=_COM_funordered
+                                  00004649  00004653         b
+  __COM_funordered
+                                  00004649         0   none ,g         * 
+FILE=_COM_sidiv
+                                  00004654  00004675        22
+  __COM_sidiv
+                                  00004656         0   none ,g         * 
+FILE=_COM_sirem
+                                  00004676  00004695        20
+  __COM_sirem
+                                  00004676         0   none ,g         * 
+FILE=_COM_ulldiv
+                                  00004696  000046bf        2a
+  __COM_ulldiv
+                                  00004696         0   none ,g         * 
+FILE=_COM_ullrem
+                                  000046c0  000046f0        31
+  __COM_ullrem
+                                  000046c0         0   none ,g         * 
+FILE=isdigit
+                                  000046f1  000046fa         a
+  _isdigit
+                                  000046f1         0   none ,g         * 
+FILE=_REL_f_inf
+                                  000046fb  00004702         8
+  __REL_f_inf
+                                  000046fb         0   none ,g         * 
+FILE=_REL_f_norm
+                                  00004703  00004712        10
+  __REL_f_norm
+                                  00004703         0   none ,g         * 
+FILE=_REL_f_round
+                                  00004713  00004725        13
+  __REL_f_round
+                                  00004713         0   none ,g         * 
+FILE=_REL_fcmp
+                                  00004726  0000475d        38
+  __REL_fcmp
+                                  00004726         0   none ,g         * 
+FILE=_REL_fordered_core
+                                  0000475e  00004779        1c
+  __REL_fordered_core
+                                  0000475e         0   none ,g         * 
+FILE=_REL_ftol
+                                  0000477a  000047ae        35
+  __REL_ftol
+                                  0000477a         0   none ,g         * 
+FILE=_REL_lldiv
+                                  000047af  000049b4       206
+  __REL_lldiv
+                                  000047cb         0   none ,g         * 
+FILE=_REL_llrem
+                                  000049b5  00004bb8       204
+  __REL_llrem
+                                  000049d2         0   none ,g         * 
+FILE=_REL_ltosl
+                                  00004bb9  00004bdd        25
+  __REL_ltosl
+                                  00004bb9         0   none ,g         * 
+FILE=_COM_lshr
+                                  00004bde  00004bfe        21
+  __COM_lshr
+                                  00004be8         0   none ,g         * 
+
+SECTION=.monitor2
+FILE=rlink_generates_02
+                                  0000fe00  0000ffff       200
+
+SECTION=.bss
+FILE=DefaultBuild\r_cg_main.obj
+                                  000fe700  000feba3       4a4
+  _at_command
+                                  000fe700        32   data ,g         * 
+  _UART1_RECIEVED_DATA
+                                  000fe732        64   data ,g         * 
+  _UART0_RECIEVED_DATA
+                                  000fe796        c8   data ,g         * 
+  _RX1_BUFFER_COPY
+                                  000fe85e        c8   data ,g         * 
+  _TIMER_COUNT
+                                  000fe926         4   data ,g         * 
+  _FEEDBACK_LENGTHG
+                                  000fe92a         2   data ,g         * 
+  _TCP_DATA_BUFFER
+                                  000fe92c       258   data ,g         * 
+  _TCP_FETCH
+                                  000feb84        1e   data ,g         * 
+  _m
+                                  000feba2         2   data ,g         * 
+FILE=DefaultBuild\r_cg_tau_user.obj
+                                  000feba4  000feba4         1
+  _TCP_INIT_STATUS
+                                  000feba4         1   data ,g         * 
+FILE=DefaultBuild\r_cg_sau.obj
+                                  000feba6  000fec1d        78
+  _gp_uart0_tx_address
+                                  000feba6         2   data ,g         * 
+  _g_uart0_tx_count
+                                  000feba8         2   data ,g         * 
+  _gp_uart0_rx_address
+                                  000febaa         2   data ,g         * 
+  _g_uart0_rx_count
+                                  000febac         2   data ,g         * 
+  _g_uart0_rx_length
+                                  000febae         2   data ,g         * 
+  _gp_uart1_tx_address
+                                  000febb0         2   data ,g         * 
+  _g_uart1_tx_count
+                                  000febb2         2   data ,g         * 
+  _gp_uart1_rx_address
+                                  000febb4         2   data ,g         * 
+  _g_uart1_rx_count
+                                  000febb6         2   data ,g         * 
+  _g_uart1_rx_length
+                                  000febb8         2   data ,g         * 
+  _URC_BUFFER
+                                  000febba        64   data ,g         * 
+FILE=DefaultBuild\r_cg_sau_user.obj
+                                  000fec1e  000ff196       579
+  _RX0_RECIEVED_STRING_LENGTH
+                                  000fec1e         1   data ,g         * 
+  _RX0_BUFFER
+                                  000fec1f        c8   data ,g         * 
+  _TX0_BUFFER
+                                  000fece7        64   data ,g         * 
+  _RX1_BUFFER
+                                  000fed4b        c8   data ,g         * 
+  _TX1_BUFFER
+                                  000fee13       1f4   data ,g         * 
+  _MAIN_RX_STORE
+                                  000ff007        c8   data ,g         * 
+  _final_buffer
+                                  000ff0cf        c8   data ,g         * 
+FILE=DefaultBuild\Quecktel.obj
+                                  000ff198  000ff262        cb
+  _COMPARE_LENGTH
+                                  000ff198         2   data ,g         * 
+  _ci
+                                  000ff19a         1   data ,g         * 
+  _COMPARE_BUFF
+                                  000ff19b        c8   data ,g         * 
+FILE=sprintf
+                                  000ff264  000ff267         4
+  __REL_pointer@1
+                                  000ff264         4   data ,l         * 
+FILE=_REL_print
+                                  000ff268  000ff2e7        80
+  _qt@1@_REL_inmod@1
+                                  000ff268        80   data ,l         * 
+
+SECTION=.dataR
+FILE=DefaultBuild\r_cg_main.obj
+                                  000ff2e8  000ff36d        86
+  _at_commands
+                                  000ff2e8        2c   data ,g         * 
+  _TCP_SUCCESS
+                                  000ff314        11   data ,g         * 
+  _TCP_REPLY
+                                  000ff325        12   data ,g         * 
+  _TCP_CLOSE
+                                  000ff337         e   data ,g         * 
+  _TCP_OPEN
+                                  000ff345         b   data ,g         * 
+  _TEST_TCP_DATA
+                                  000ff350        11   data ,g         * 
+  _COMPARE_MATCH1
+                                  000ff361         1   data ,g         * 
+  _count
+                                  000ff362         1   data ,g         * 
+  _BUF_FLAG
+                                  000ff363         1   data ,g         * 
+  _TCP_INT_FLAG
+                                  000ff364         1   data ,g         * 
+  _MODULE_MODE
+                                  000ff365         1   data ,g         * 
+  _TCP_DATA_PROCESSED
+                                  000ff366         1   data ,g         * 
+  _connection_id
+                                  000ff368         2   data ,g         * 
+  _frame_size
+                                  000ff36a         1   data ,g         * 
+  _framsize
+                                  000ff36b         1   data ,g         * 
+  _tcp_count
+                                  000ff36c         1   data ,g         * 
+  _TCP_DATA
+                                  000ff36d         1   data ,g         * 
+FILE=DefaultBuild\r_cg_tau_user.obj
+                                  000ff36e  000ff36e         1
+  _DATA_RECIEVED
+                                  000ff36e         1   data ,g         * 
+FILE=DefaultBuild\r_cg_sau_user.obj
+                                  000ff370  000ff37b         c
+  _LINE_END_COUNT
+                                  000ff370         1   data ,g         * 
+  _URC_COUNT
+                                  000ff371         1   data ,g         * 
+  _METER_DATA
+                                  000ff372         1   data ,g         * 
+  _RX0_BUFFER_COUNT
+                                  000ff374         2   data ,g         * 
+  _TX0_BUFFER_COUNT
+                                  000ff376         1   data ,g         * 
+  _RX1_BUFFER_COUNT
+                                  000ff377         1   data ,g         * 
+  _TX1_BUFFER_COUNT
+                                  000ff378         1   data ,g         * 
+  _MAIN_RX_STORE_COUNT
+                                  000ff379         1   data ,g         * 
+  _END_OF_RESPONSE
+                                  000ff37a         1   data ,g         * 
+  _END_OF_RESPONSE1
+                                  000ff37b         1   data ,g         * 
+FILE=DefaultBuild\Quecktel.obj
+                                  000ff37c  000ff392        17
+  _at_cmd
+                                  000ff37c        16   data ,g         * 
+  _COMPARE_MATCH
+                                  000ff392         1   data ,g         * 
+
+Absolute value symbols
+FILE=rlink_generates_05
+  __s.text
+                                  00000183         0   none ,g         * 
+  __e.text
+                                  0000047a         0   none ,g         * 
+  __s.textf
+                                  0000047a         0   none ,g         * 
+  __e.textf
+                                  00000d35         0   none ,g         * 
+  __s.const
+                                  00002000         0   none ,g         * 
+  __e.const
+                                  0000240a         0   none ,g         * 
+  __s.constf
+                                  00000080         0   none ,g         * 
+  __e.constf
+                                  00000094         0   none ,g         * 
+  __s.data
+                                  000000d8         0   none ,g         * 
+  __e.data
+                                  00000183         0   none ,g         * 
+  __s.sdata
+                                  00000080         0   none ,g         * 
+  __e.sdata
+                                  00000080         0   none ,g         * 
+  __s.bss
+                                  000fe700         0   none ,g         * 
+  __e.bss
+                                  000ff2e8         0   none ,g         * 
+  __s.sbss
+                                  000ffe20         0   none ,g         * 
+  __e.sbss
+                                  000ffe20         0   none ,g         * 
+  __s.dataR
+                                  000ff2e8         0   none ,g         * 
+  __e.dataR
+                                  000ff393         0   none ,g         * 
+  __s.sdataR
+                                  000ffe20         0   none ,g         * 
+  __e.sdataR
+                                  000ffe20         0   none ,g         * 
+  __s.init_array
+                                  00000094         0   none ,g         * 
+  __e.init_array
+                                  00000094         0   none ,g         * 
+  __s.RLIB
+                                  000000c4         0   none ,g         * 
+  __e.RLIB
+                                  000000c4         0   none ,g         * 
+  __s.SLIB
+                                  0000240a         0   none ,g         * 
+  __e.SLIB
+                                  00004bff         0   none ,g         * 
+  __s.option_byte
+                                  000000c0         0   none ,g         * 
+  __e.option_byte
+                                  000000c4         0   none ,g         * 
+  __s.monitor1
+                                  000000ce         0   none ,g         * 
+  __e.monitor1
+                                  000000d8         0   none ,g         * 
+  __s.monitor2
+                                  0000fe00         0   none ,g         * 
+  __e.monitor2
+                                  00010000         0   none ,g         * 
+  __s.security_id
+                                  000000c4         0   none ,g         * 
+  __e.security_id
+                                  000000ce         0   none ,g         * 
+  __s.vect
+                                  00000000         0   none ,g         * 
+  __e.vect
+                                  00000080         0   none ,g         * 
+  __RAM_ADDR_START
+                                  000fe700         0   none ,g         * 
+  __RAM_ADDR_END
+                                  000ffee0         0   none ,g         * 
+  __STACK_ADDR_START
+                                  000ffe20         0   none ,g         * 
+  __STACK_ADDR_END
+                                  000ff394         0   none ,g         * 
+
+*** Unfilled Areas ***
+
+AREA                                START    END
+
+*** Delete Symbols ***
+
+SYMBOL                                SIZE    INFO

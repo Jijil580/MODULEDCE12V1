@@ -1,0 +1,9 @@
+ATI\r\n
+
+response:
+
+Quectel
+EC200U
+Revision: EC200UCNAAR03A09M08
+
+OK

@@ -1,0 +1,29 @@
+﻿CS+ V8.12.00  [06 Jun 2024] [Watch Information]
+04 December 2024 18:18:18
+Debug Tool :RL78 E2 Lite
+Project Name :MODULETEST118OCT
+Watch                 Value       Type(Byte Size) Address     Memo
+------------------------------------------------------------------------------
++gp_uart1_tx_address  "?" (0x0000 uint8_t *(2)    0xfee1a                     
+                      )                                                       
++RX0_BUFFER           "+QLTS: "2 uint8_t [200](2 0xfed46                     
+                      024/12/04,1 00)                                         
+                      8:15:21+22,                                             
+                      0"OK"                                                
+TIMER_COUNT           0 (0x000000 long(4)         0xfed42                     
+                      00)                                                     
+ATI_RESPONSE          ?           ?               ?                           
++RX0_BUFFER           "+QLTS: "2 uint8_t [200](2 0xfed46                     
+                      024/12/04,1 00)                                         
+                      8:15:21+22,                                             
+                      0"OK"                                                
++URC_BUFFER           ""          uint8_t [100](1 0xfee24                     
+                                  00)                                         
++RX0_BUFFER           "+QLTS: "2 uint8_t [200](2 0xfed46                     
+                      024/12/04,1 00)                                         
+                      8:15:21+22,                                             
+                      0"OK"                                                
++TX0_BUFFER           ""          uint8_t [100](1 0xfee89                     
+                                  00)                                         
++at_commands          -           unsigned char * 0xff3a2                     
+                                  [27](54)                                    
