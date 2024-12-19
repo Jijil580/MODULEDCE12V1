@@ -1,13 +1,66 @@
 QualityReport
-12 December 2024 14:49:52
+19 December 2024 12:35:12
 
 ------ Start build(MODULETEST118OCT, DefaultBuild) ------
------- Build ended(Error:0, Warning:0)(MODULETEST118OCT, DefaultBuild) ------
+C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RL\V1.14.00\Bin\ccrl.exe cg_src\r_cg_main.c -cpu=S3 -o DefaultBuild\r_cg_main.obj "-dev=C:\Program Files (x86)\Renesas Electronics\CS+\CC\Device\RL78\Devicefile\DR5F10NLE.DVF" -g -g_line -I cg_src -I . -c -msg_lang=english
+cg_src\r_cg_main.c(221):W0520167:Argument of type "uint8_t __near *" is incompatible with parameter of type "const char __near *__near"
+cg_src\r_cg_main.c(284):W0520167:Argument of type "const char *__near" is incompatible with parameter of type "uint8_t *const __near"
+cg_src\r_cg_main.c(366):W0520167:Argument of type "char __near *" is incompatible with parameter of type "uint8_t *const __near"
+cg_src\r_cg_main.c(389):W0520167:Argument of type "uint8_t __near *" is incompatible with parameter of type "const char __near *__near"
+cg_src\r_cg_main.c(409):W0520167:Argument of type "uint8_t __near *" is incompatible with parameter of type "const char __near *__near"
+cg_src\r_cg_main.c(413):W0520167:Argument of type "char __near *" is incompatible with parameter of type "uint8_t *const __near"
+cg_src\r_cg_main.c(415):W0520167:Argument of type "uint8_t __near *" is incompatible with parameter of type "const char __near *__near"
+C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RL\V1.14.00\Bin\rlink.exe -subcommand=DefaultBuild\MODULETEST118OCT.clnk
+Renesas Optimizing Linker Completed
+------ Build ended(Error:0, Warning:7)(MODULETEST118OCT, DefaultBuild) ------
+
+--- CommandFile 1 ---
+DefaultBuild\MODULETEST118OCT.clnk :
+-Input=DefaultBuild\cstart.obj
+-Input=DefaultBuild\stkinit.obj
+-Input=DefaultBuild\r_cg_main.obj
+-Input=DefaultBuild\r_cg_systeminit.obj
+-Input=DefaultBuild\r_cg_cgc.obj
+-Input=DefaultBuild\r_cg_cgc_user.obj
+-Input=DefaultBuild\r_cg_port.obj
+-Input=DefaultBuild\r_cg_port_user.obj
+-Input=DefaultBuild\r_cg_tau.obj
+-Input=DefaultBuild\r_cg_tau_user.obj
+-Input=DefaultBuild\r_cg_sau.obj
+-Input=DefaultBuild\r_cg_sau_user.obj
+-Input=DefaultBuild\Quecktel.obj
+-Input=DefaultBuild\r_cg_wdt.obj
+-Input=DefaultBuild\r_cg_wdt_user.obj
+-SECURITY_ID=00000000000000000000
+-DEVICE=C:\Program Files (x86)\Renesas Electronics\CS+\CC\Device\RL78\Devicefile\DR5F10NLE.DVF
+-DEBug
+-NOCOmpress
+-NOOPtimize
+-OUtput=DefaultBuild\MODULETEST118OCT.abs
+-OCDBG=84
+-DEBUG_MONITOR=FE00-FFFF
+-USER_OPT_BYTE=FFFFE0
+-LISt=DefaultBuild\MODULETEST118OCT.map
+-SHow=SYmbol,Total_size
+-AUTO_SECTION_LAYOUT
+-ROm=.data=.dataR
+-ROm=.sdata=.sdataR
+-NOMessage
+-MEMory=High
+-NOLOgo
+-LIBrary=DefaultBuild\MODULETEST118OCT.lib
+-end
+-Input=DefaultBuild\MODULETEST118OCT.abs
+-DEVICE=C:\Program Files (x86)\Renesas Electronics\CS+\CC\Device\RL78\Devicefile\DR5F10NLE.DVF
+-OUtput=DefaultBuild\MODULETEST118OCT.mot
+-FOrm=Stype
+-NOMessage
+-exit
 
 
 --- SHA1 hash value of output files ---
-D:\JIJIL EPPL\backups\GPRS_MODULE_FIRMWARE\DefaultBuild\MODULETEST118OCT.abs: ac6997697ac687108e31e7158b5abc0714cc95ff
-D:\JIJIL EPPL\backups\GPRS_MODULE_FIRMWARE\DefaultBuild\MODULETEST118OCT.mot: fce787b5508ecebdaa9cfd718cc5b56f4670850a
+D:\JIJIL EPPL\PROJECTS\MODULE_DEC12\GPRS_MODULE_FIRMWARE\DefaultBuild\MODULETEST118OCT.abs: d865dc630d04ceede5af6fad2c4d8378439852e6
+D:\JIJIL EPPL\PROJECTS\MODULE_DEC12\GPRS_MODULE_FIRMWARE\DefaultBuild\MODULETEST118OCT.mot: 0481ddc18fcdd15a932ed77de49ab991da8b3a2e
 
 
 --- System Information ---
@@ -33,13 +86,13 @@ D:\JIJIL EPPL\backups\GPRS_MODULE_FIRMWARE\DefaultBuild\MODULETEST118OCT.mot: fc
  C:\Program Files (x86)\Renesas Electronics\CS+\CC
 *Memory Usage
  *Private Working Set
-  402 MB
+  520 MB
  *Number of GDI Objects
-  2515
+  2247
  *Number of USER Objects
-  1519
+  1301
  *Opened Files
-  24 editors, 24 files, 272 KB
+  5 editors, 5 files, 49 KB
 
 --- Build Tool Plug-in Information ---
 RH850 Build tool CC-RH Plug-in
@@ -175,7 +228,7 @@ Device Information Common Interface
   DeviceInformation.dll
 
 --- Main Project Information ---
-D:\JIJIL EPPL\backups\GPRS_MODULE_FIRMWARE\MODULETEST118OCT.mtpj
+D:\JIJIL EPPL\PROJECTS\MODULE_DEC12\GPRS_MODULE_FIRMWARE\MODULETEST118OCT.mtpj
 Microcontroller Information
  *R5F10NLE
   *File Name: Version
@@ -202,6 +255,8 @@ Build Tool Information
 Debug Tool Information
  *RL78 E2 Lite
   Debugger Library V8.12.00.03 [23 May 2024]
+  RL78 E2 Lite Executor V4.13c [14 Mar 2024]
+  E2 Lite 4100 A F/W V07.06
   
 
 Other Tool Information

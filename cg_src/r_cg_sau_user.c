@@ -72,10 +72,10 @@ extern volatile uint16_t  g_uart1_rx_length;           /* uart1 receive data len
  uint8_t URC_COUNT=0;
  
  uint8_t RX0_RECIEVED_STRING_LENGTH;
- uint8_t RX0_BUFFER[200];
- uint8_t TX0_BUFFER[100];
- uint8_t RX1_BUFFER[200];
- uint8_t TX1_BUFFER[500];
+ uint8_t RX0_BUFFER[512];
+ //uint8_t TX0_BUFFER[100];
+ uint8_t RX1_BUFFER[512];
+// uint8_t TX1_BUFFER[500];
  extern uint8_t URC_BUFFER[100];
  uint8_t METER_DATA=0;
  int  RX0_BUFFER_COUNT=0;
@@ -85,8 +85,9 @@ extern volatile uint16_t  g_uart1_rx_length;           /* uart1 receive data len
  extern uint8_t MAIN_RX_STORE_COUNT=0;
  uint8_t END_OF_RESPONSE=0;
  uint8_t END_OF_RESPONSE1=0;
- uint8_t MAIN_RX_STORE[200];
- uint8_t final_buffer[200]; // Adjust size as per your needs
+ //uint8_t MAIN_RX_STORE[512];
+ uint8_t final_buffer[512]; // Adjust size as per your needs
+  //int START_TIMER=0;
 /***********************************************************************************************************************
 * Function Name: r_uart0_interrupt_receive
 * Description  : None
@@ -222,7 +223,7 @@ extern volatile uint16_t  g_uart1_rx_length;           /* uart1 receive data len
 static void __near r_uart0_interrupt_receive(void)
 {
   
- 
+
 	  
    volatile uint8_t rx_data;
    volatile uint8_t err_type;
@@ -241,19 +242,24 @@ static void __near r_uart0_interrupt_receive(void)
   
     if ( rx_data>=32&& rx_data<=126|| rx_data=='\r'|| rx_data=='\n')
        {
-	       if(TIMER_COUNT==0)
+	       if((TIMER_COUNT==0)&&(START_TIMER==0)&&(MODULE_MODE==TCP_MODE))
 	       {
 		  R_TAU0_Channel0_Start();
 		  METER_DATA=0;
+		  START_TIMER=1;
+	       }
+	       else if((TIMER_COUNT==0)&&(MODULE_MODE==INIT_MODE ))
+	       {
+		       R_TAU0_Channel0_Start();
+		       METER_DATA=0;
 	       }
 
-        if (RX0_BUFFER_COUNT < 200- 1 && MAIN_RX_STORE_COUNT < 1000 - 1) // Ensure we don't overflow
+               if (RX0_BUFFER_COUNT < 200- 1 && MAIN_RX_STORE_COUNT < 1000 - 1) // Ensure we don't overflow
              	{
             		RX0_BUFFER[RX0_BUFFER_COUNT]= rx_data;
-	      		//MAIN_RX_STORE[MAIN_RX_STORE_COUNT]=rx_data;
+	      		
 	   		RX0_BUFFER_COUNT++;
-	   		//MAIN_RX_STORE_COUNT++;
-	   	}
+		}
      
 	
 	
@@ -264,17 +270,6 @@ static void __near r_uart0_interrupt_receive(void)
    
   }
   
-  //cr_uart0_callback_receiveend();
-//          UART0_RECIEVED_DATA[ g_uart0_rx_count]='\0';
-//          RX0_BUFFER[RX0_BUFFER_COUNT]='\0';
-//	  strcpy((char*)COMPARE_BUFF,(char*)RX0_BUFFER);
-//	  RX0_RECIEVED_STRING_LENGTH=RX0_BUFFER_COUNT;
-//	  Compare_response();
-//          r_uart0_callback_receiveend();
-//	  R_TAU0_Channel0_Stop();
-//          TIMER_COUNT=0;
-//}
-
 
 
 /***********************************************************************************************************************
@@ -294,9 +289,9 @@ static void __near r_uart0_interrupt_send(void)
     else
     {
 	//memset(UART1_RECIEVED_DATA,0,100);
-	memset(RX1_BUFFER,0,200);
-	memset(MAIN_RX_STORE,0,200);
-	memset(final_buffer,0,200);
+	memset(RX1_BUFFER,0,512);
+	//memset(MAIN_RX_STORE,0,200);
+	memset(final_buffer,0,512);
 	RX1_BUFFER_COUNT=0;
 	MAIN_RX_STORE_COUNT=0;
 	LINE_END_COUNT=0;
@@ -380,7 +375,7 @@ static void __near r_uart1_interrupt_receive(void)
     {
 	if(TIMER_COUNT==0)
 	   {
-            R_TAU0_Channel0_Start(); 
+             R_TAU0_Channel0_Start(); 
 	     METER_DATA=1;
 	    }
 
@@ -448,11 +443,11 @@ static void __near r_uart1_interrupt_send(void)
     }
     else
     {
-	memset(UART0_RECIEVED_DATA,0,200);
-	memset(RX0_BUFFER,0,200);
-	memset(RX1_BUFFER,0,200);
-	memset(MAIN_RX_STORE,0,200);
-	memset(final_buffer,0,200);
+	memset(UART0_RECIEVED_DATA,0,512);
+	memset(RX0_BUFFER,0,sizeof(RX0_BUFFER));
+	memset(RX1_BUFFER,0,sizeof(RX1_BUFFER));
+	//memset(MAIN_RX_STORE,0,512);
+	memset(final_buffer,0,512);
 	 memset(URC_BUFFER,0,100);
 	RX0_BUFFER_COUNT=0;
 	RX1_BUFFER_COUNT=0;

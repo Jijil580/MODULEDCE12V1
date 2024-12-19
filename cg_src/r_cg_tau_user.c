@@ -43,6 +43,7 @@ Pragma directive
 /* End user code. Do not edit comment generated here */
 uint8_t DATA_RECIEVED=0;
 uint8_t TCP_INIT_STATUS;
+int START_TIMER=0;
 //uint8_t METER_DATA=0;
 /***********************************************************************************************************************
 Global variables and functions
@@ -69,14 +70,15 @@ static void __near r_tau0_channel0_interrupt(void)
 	   R_TAU0_Channel0_Stop();
 	  
 	   }
-       if(TIMER_COUNT>=3&&TCP_INIT_STATUS==1&&METER_DATA==0)///TCP DATA RECVD
+       if(TIMER_COUNT>=1&&TCP_INIT_STATUS==1&&METER_DATA==0)///TCP DATA RECVD
 	  {
            TCP_DATA=1;
            TIMER_COUNT=0;
 	   DATA_RECIEVED=1;
 	   R_TAU0_Channel0_Stop();
+	   START_TIMER=0;
 	   }
-	  if(TIMER_COUNT>=3&&TCP_INIT_STATUS==1&&METER_DATA==1)///DATA FROM METER RECVD
+	  if(TIMER_COUNT>=1&&TCP_INIT_STATUS==1&&METER_DATA==1)///DATA FROM METER RECVD
 	  {
            TCP_DATA=0;
            TIMER_COUNT=0;

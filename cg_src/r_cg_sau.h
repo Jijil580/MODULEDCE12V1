@@ -291,6 +291,14 @@ commonly supplied to each channel. (SPSm)
 #define _02_SAU_IIC_RECEIVE_FLAG                (0x02U)
 #define _04_SAU_IIC_SENDED_ADDRESS_FLAG         (0x04U)
 
+////////////defined jijil
+
+#define TCP_INITIALISED       1
+#define TCP_FAILED            0
+#define TCP_MODE              1
+#define INIT_MODE             0
+#define TCP_RESTART_MODE      2
+////////////////////////////////////
 /***********************************************************************************************************************
 Macro definitions
 ***********************************************************************************************************************/
@@ -313,12 +321,14 @@ Typedef definitions
 ***********************************************************************************************************************/
 extern uint8_t MODULE_FEEDBACK[200];
 extern int FEEDBACK_LENGTHG;
-extern uint8_t UART0_RECIEVED_DATA[200];
-extern  uint8_t RX0_BUFFER[200];
-extern uint8_t RX1_BUFFER[200];
+extern uint8_t UART0_RECIEVED_DATA[];
+extern  uint8_t RX0_BUFFER[512];
+extern uint8_t RX1_BUFFER[512];
 extern uint8_t RX0_RECIEVED_STRING_LENGTH;
 extern uint8_t COMPARE_BUFF[200];
 extern uint8_t RX1_BUFFER_COUNT;
+ extern int START_TIMER;
+ extern uint8_t MODULE_MODE;
 /***********************************************************************************************************************
 Global functions
 ***********************************************************************************************************************/
